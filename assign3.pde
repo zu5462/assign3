@@ -236,7 +236,7 @@ void mouseClicked(){
     clickrow= (mouseY-iy)/SLOT_SIZE;
     if(mouseButton==LEFT && checkslot[clickcol][clickrow]!=SLOT_FLAG){    
     showSlot(clickcol, clickrow, slot[clickcol][clickrow]);
-    println(safeclick);
+   // println(safeclick);
      if (slot[clickcol][clickrow]==SLOT_BOMB){
              slot[clickcol][clickrow]=SLOT_DEAD;
              gameState=GAME_LOSE;
