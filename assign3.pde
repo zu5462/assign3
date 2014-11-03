@@ -76,7 +76,7 @@ if(gameState==GAME_WIN ||gameState==GAME_LOSE){
     case GAME_START:
           background(180);
           image(bg,0,0,640,480);
-          textFont(loadFont("font/Square_One.ttf"),16)
+          textFont(loadFont("font/Square_One.ttf"),15)
           fill(0);
           text("Choose # of bombs to continue:",10,width/3-24);
           int spacing = width/9;
@@ -96,12 +96,12 @@ if(gameState==GAME_WIN ||gameState==GAME_LOSE){
           // -----------------------------------
           break;
     case GAME_WIN:  
-          textFont(loadFont("font/Square_One.ttf"),18)
+          textFont(loadFont("font/Square_One.ttf"),16)
           fill(0);
           text("YOU WIN !!",width/3,30);
           break;
     case GAME_LOSE:
-          textFont(loadFont("font/Square_One.ttf"),18)
+          textFont(loadFont("font/Square_One.ttf"),16)
           fill(0);
           text("YOU LOSE !!",width/3,30);
           break;
