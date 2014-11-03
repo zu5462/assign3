@@ -273,5 +273,6 @@ void keyPressed(){
   if(key==ENTER && (gameState == GAME_WIN || 
                     gameState == GAME_LOSE)){
      gameState = GAME_START;
+     safeclick=0;
   }
 }
