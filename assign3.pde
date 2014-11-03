@@ -274,5 +274,10 @@ void keyPressed(){
                     gameState == GAME_LOSE)){
      gameState = GAME_START;
      safeclick=0;
+   for (int col=0; col < nSlot; col++){
+    for (int row=0; row < nSlot; row++){
+      checkslot[col][row] = SLOT_OFF;
+    }
   }
+}
 }
