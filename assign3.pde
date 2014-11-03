@@ -76,7 +76,7 @@ if(gameState==GAME_WIN ||gameState==GAME_LOSE){
     case GAME_START:
           background(180);
           image(bg,0,0,640,480);
-          textSize(16);
+          textFont(loadFont("font/Square_One.ttf"),16)
           fill(0);
           text("Choose # of bombs to continue:",10,width/3-24);
           int spacing = width/9;
@@ -96,12 +96,12 @@ if(gameState==GAME_WIN ||gameState==GAME_LOSE){
           // -----------------------------------
           break;
     case GAME_WIN:  
-          textSize(18);
+          textFont(loadFont("font/Square_One.ttf"),18)
           fill(0);
           text("YOU WIN !!",width/3,30);
           break;
     case GAME_LOSE:
-          textSize(18);
+          textFont(loadFont("font/Square_One.ttf"),18)
           fill(0);
           text("YOU LOSE !!",width/3,30);
           break;
@@ -187,7 +187,7 @@ void showSlot(int col, int row, int slotState){
           int count = countNeighborBombs(col,row);
           if (count != 0){
             fill(0);
-            textSize(SLOT_SIZE*3/5);
+            textFont(loadFont("font/Square_One.ttf"),(SLOT_SIZE*3/5));
             text( count, x+15, y+15+SLOT_SIZE*3/5);
           }
           break;
@@ -232,8 +232,8 @@ void mouseClicked(){
        mouseY >= iy && mouseY <= iy+sideLength){
     
     // --------------- put you code here -------
-    clickcol= (mouseX-ix)/SLOT_SIZE;
-    clickrow= (mouseY-iy)/SLOT_SIZE;
+    clickcol= int((mouseX-ix)/SLOT_SIZE);
+    clickrow= int((mouseY-iy)/SLOT_SIZE);
     if(mouseButton==LEFT && checkslot[clickcol][clickrow]!=SLOT_FLAG){    
     showSlot(clickcol, clickrow, slot[clickcol][clickrow]);
    // println(safeclick);
