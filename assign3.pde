@@ -117,7 +117,7 @@ int countNeighborBombs(int col,int row){
       if(countcol<0 || countcol>3 || countrow<0 || countrow>3){
         continue;
       }
-      else if(slot[countcol][countrow] == SLOT_BOMB || slot[countcol][countrow] == SLOT_DEAD ){
+      else if(slot[countcol][countrow] == SLOT_BOMB || slot[countcol][countrow] == SLOT_DEAD || slot[countcol][countrow]==SLOT_FLAG_BOMB){
            count++;
      }
     }
@@ -208,7 +208,7 @@ void showSlot(int col, int row, int slotState){
 }
 
 // select num of bombs
-void mousePressed(){
+void mouseClicked(){
   if ( gameState == GAME_START &&
        mouseY > width/3 && mouseY < width/3+50){
        // select 1~9
@@ -226,7 +226,7 @@ void mousePressed(){
   }
 }
 
-void mouseClicked(){
+void mousePressed(){
   if ( gameState == GAME_RUN &&
        mouseX >= ix && mouseX <= ix+sideLength && 
        mouseY >= iy && mouseY <= iy+sideLength){
